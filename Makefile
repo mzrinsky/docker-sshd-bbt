@@ -1,6 +1,6 @@
-NAME := sshd
+NAME := sshd-bbt
 TAG := latest
-IMAGE_NAME := panubo/$(NAME)
+IMAGE_NAME := mzrinsky/$(NAME)
 
 .PHONY: *
 

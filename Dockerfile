@@ -1,7 +1,8 @@
 FROM alpine:3.20
 
+# we install tar, gzip, pigz, and findutils as busybox versions do not work..
 RUN apk update && \
-    apk add --no-cache bash git openssh rsync augeas shadow rssh && \
+    apk add --no-cache bash git openssh rsync tar gzip findutils pigz augeas shadow rssh && \
     deluser $(getent passwd 33 | cut -d: -f1) && \
     delgroup $(getent group 33 | cut -d: -f1) 2>/dev/null || true && \
     mkdir -p ~root/.ssh /etc/authorized_keys && chmod 700 ~root/.ssh/ && \
